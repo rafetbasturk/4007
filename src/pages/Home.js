@@ -1,4 +1,7 @@
+import { Wrapper } from "@googlemaps/react-wrapper";
+import Map from "../components/Map";
 import image from "../images/hero.jpeg"
+
 
 const Home = () => {
   return (
@@ -12,7 +15,7 @@ const Home = () => {
           height="100%"
         />
       </div>
-      <section className="main__info">
+      {/* <section className="main__info">
         <div>
           <h2 className="main__name">
             Gözleri gökyüzüne dalanların, yeryüzünde olmayan hayallerine gidiyoruz…
@@ -29,9 +32,12 @@ const Home = () => {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBiat57nJYu_iyHI4AjBjwntPazracE09Q&q=Şahinbey+Kongre+ve+Sanat+Merkezi/`}>
+          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}&q=Şahinbey+Kongre+ve+Sanat+Merkezi/`}>
         </iframe>
-      </section>
+      </section> */}
+      <Wrapper apiKey={process.env.REACT_APP_API_KEY} className="main__info">
+        <Map />
+      </Wrapper>
     </main>
   );
 }

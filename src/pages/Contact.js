@@ -9,9 +9,9 @@ const Contact = () => {
       </div>
 
       <div className="contact__info">
-        <a href="mailto:evrimaksoycan@gmail.com" className="contact__email">
+        <a href="mailto:teknobilim2022@gmail.com" className="contact__email">
           <FaEnvelope className="contact-icon" />
-          <span>evrimaksoycan@gmail.com</span>
+          <span>teknobilim2022@gmail.com</span>
         </a>
 
         <a href="tel:+90 553 309 28 24" className="contact__phone">

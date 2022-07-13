@@ -49,9 +49,9 @@ const Header = ({ page, setPage }) => {
 
       <div className="header__top" ref={topContainerRef}>
         <div className="header__info">
-          <a href="mailto:evrimaksoycan@gmail.com" className="header__email">
+          <a href="mailto:teknobilim2022@gmail.com" className="header__email">
             <FaEnvelope className="header-icon" />
-            <span>evrimaksoycan@gmail.com</span>
+            <span>teknobilim2022@gmail.com</span>
           </a>
 
 
