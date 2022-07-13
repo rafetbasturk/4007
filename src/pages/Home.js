@@ -1,7 +1,4 @@
-import { Wrapper } from "@googlemaps/react-wrapper";
-import Map from "../components/Map";
 import image from "../images/hero.jpeg"
-
 
 const Home = () => {
   return (
@@ -15,10 +12,26 @@ const Home = () => {
           height="100%"
         />
       </div>
-
-      <Wrapper apiKey="AIzaSyBiat57nJYu_iyHI4AjBjwntPazracE09Q" className="main__info">
-        <Map />
-      </Wrapper>
+      <section className="main__info">
+        <div>
+          <h2 className="main__name">
+            Gözleri gökyüzüne dalanların, yeryüzünde olmayan hayallerine gidiyoruz…
+          </h2>
+          <p><span className="main__title">Yer:</span><span>ŞAHİNBEY KONGRE VE SANAT MERKEZİ</span></p>
+          <p><span className="main__title">Tarih:</span><span>22-23-24 EYLÜL 2022</span></p>
+        </div>
+        <iframe
+          className="main__map"
+          title="map"
+          width="100%"
+          height="300"
+          style={{ "border": 0 }}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}&q=Şahinbey+Kongre+ve+Sanat+Merkezi/`}>
+        </iframe>
+      </section>
     </main>
   );
 }

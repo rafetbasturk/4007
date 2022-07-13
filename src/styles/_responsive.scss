@@ -73,6 +73,11 @@
     &__slide {
       height: 400px;
     }
+
+    &__map {
+      margin-top: 1.6rem;
+      height: 400px;
+    }
   }
 
   .intro {
@@ -179,29 +184,6 @@
 
     &__slide {
       height: 550px;
-    }
-
-    &__title-container {
-      left: 15rem;
-      width: calc(100% - 30rem);
-      height: calc(100% - 6.4rem);
-      padding: 3.2rem;
-    }
-
-    &__title {
-      font-size: 4rem;
-    }
-
-    &__left {
-      left: 15rem;
-    }
-
-    &__right {
-      right: 15rem;
-    }
-
-    &__dots {
-      bottom: 4rem;
     }
   }
 
