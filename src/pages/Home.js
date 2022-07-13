@@ -16,7 +16,7 @@ const Home = () => {
         />
       </div>
 
-      <Wrapper apiKey={process.env.REACT_APP_API_KEY} className="main__info">
+      <Wrapper apiKey="AIzaSyBiat57nJYu_iyHI4AjBjwntPazracE09Q" className="main__info">
         <Map />
       </Wrapper>
     </main>
