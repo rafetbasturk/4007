@@ -1,0 +1,577 @@
+@import "config";
+
+body {
+  font-size: 1.6rem;
+  font-family: "Nunito", sans-serif;
+  color: var(--clr-logo-2);
+  background: rgb(248, 248, 248);
+}
+
+a {
+  @include link;
+}
+
+.header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 1.6rem;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: var(--clr-white);
+  border-bottom: 1px solid var(--clr-border);
+
+  &__top {
+    overflow: hidden;
+    transition: all 0.4s linear;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    transition: all .3s ease-in-out;
+  }
+
+  &__email,
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    span {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--clr-heading);
+    }
+
+    &:hover {
+      span {
+        color: var(--clr-logo-1);
+      }
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &-icon {
+    color: var(--clr-logo-1);
+  }
+
+  &__menu {
+    background: var(--clr-logo-1);
+    margin-top: .5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    transition: all 0.4s linear;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__ham,
+  &__close {
+    font-size: 30px;
+    color: var(--clr-white);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--clr-heading);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__nav-container {
+    padding: 1rem 0;
+  }
+
+  &__nav {
+    position: absolute;
+    background: var(--clr-white);
+    width: calc(100% - 3.2rem);
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s linear;
+
+    p {
+      padding: 1.2rem 1.6rem;
+      transition: all 0.3s linear;
+      font-size: 1.4rem;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--clr-logo-2);
+        padding-left: 2.8rem;
+
+        a {
+          color: var(--clr-white);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  background: var(--clr-white);
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  &__slide {
+    height: 250px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: fill;
+    animation: slider 1s ease-out;
+  }
+
+  &__map {
+    height: 400px;
+  }
+
+  &__info {
+    background: var(--clr-white);
+    padding: 1.6rem;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  &__title {
+    display: inline-block;
+    width: 50px;
+    color: var(--clr-heading);
+    font-size: 1.6rem;
+  }
+}
+
+@keyframes slider {
+  from {
+    transform: scale(.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes title {
+  to {
+    top: 0;
+    left: 0;
+    transform: rotateY(360deg);
+  }
+}
+
+.intro {
+  padding: 3.2rem 1.6rem;
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3.2rem;
+  max-width: 1440px;
+  margin: auto;
+  text-align: center;
+  color: var(--clr-heading);
+
+  &__div {
+    font-weight: 300;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__icon {
+    font-size: 60px;
+    color: var(--clr-logo-1);
+    flex-shrink: 0;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+.machines {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--clr-white);
+
+  &__title {
+    @include title;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+    gap: 3.2rem;
+    padding: 3.2rem 1.6rem;
+  }
+
+  &__card {
+    box-shadow: 0px 0px 3px var(--clr-logo-2);
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+
+    img {
+      height: 100%;
+      display: block;
+      border-radius: 0.8rem 0.8rem 0 0;
+    }
+  }
+
+  &__image {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--clr-logo-1);
+  }
+
+  &__info {
+    padding: 1.6rem;
+    h3 {
+      margin-bottom: 1.6rem;
+    }
+    p {
+      margin: 0.3rem 0;
+    }
+  }
+}
+
+.ref {
+  background: var(--clr-white);
+
+  &__title {
+    @include title;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    padding: 3.2rem 1.6rem;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    border: 1px solid var(--clr-logo-2);
+    border-radius: 0.5rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.contact {
+  background: var(--clr-white);
+
+  &__title {
+    @include title;
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3.2rem 1.6rem;
+    max-width: 700px;
+    margin: auto;
+    gap: 3.2rem;
+  }
+
+  &__address,
+  &__email,
+  &__phone {
+    border-radius: 0.8rem;
+    width: 250px;
+    height: 150px;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.6rem;
+    transition: all 0.4s ease;
+
+    address,
+    span {
+      font-weight: 400;
+      color: var(--clr-heading);
+      text-align: center;
+    }
+
+    &:hover {
+      background: var(--clr-logo-1);
+
+      .contact-icon,
+      address,
+      span {
+        transition: all 0.4s ease;
+        color: var(--clr-white);
+      }
+    }
+  }
+
+  &-icon {
+    font-size: 2.4rem;
+    color: var(--clr-logo-1);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 700px;
+    margin: auto;
+    padding: 3.2rem 1.6rem;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+
+    input {
+      padding: 1.4rem 1.4rem 1.4rem 4rem;
+      border: 1px solid var(--clr-logo-2);
+      border-radius: 0.6rem;
+
+      &:hover {
+        box-shadow: 0 2px 8px var(--clr-logo-2);
+      }
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      position: absolute;
+      top: 3.5rem;
+      left: 1rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      resize: none;
+      padding: 1.4rem;
+      border: 1px solid var(--clr-logo-2);
+      border-radius: 0.6rem;
+
+      &:hover {
+        box-shadow: 0 2px 8px var(--clr-logo-2);
+      }
+
+      &:active {
+        outline: 2px solid var(--clr-logo-1);
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1.4rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: var(--clr-logo-2);
+    color: var(--clr-heading);
+    font-size: 2rem;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--clr-white);
+      background: var(--clr-logo-1);
+      transition: all 0.4s linear;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.footer {
+  background: var(--clr-heading);
+  padding: 3.2rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  &__logo-wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  &__logo {
+    width: 100px;
+    height: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    color: var(--clr-white);
+    padding: 0.8rem 1.2rem;
+    margin: 0.4rem 0;
+
+    &:hover {
+      color: var(--clr-logo-1);
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 2.4rem;
+
+    a {
+      transition: all 0.4s ease;
+      color: var(--clr-white);
+
+      &:hover {
+        transform: rotateX(20deg);
+        color: var(--clr-logo-1);
+      }
+    }
+  }
+
+  &__copy {
+    color: var(--clr-logo-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+
+  &__logo2 {
+    width: 50px;
+    height: auto;
+  }
+}
+
+.error {
+  width: 100%;
+  height: calc(50vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto;
+  background: var(--clr-white);
+
+  &__message {
+    color: rgb(146, 56, 78);
+    font-size: 2.4rem;
+    padding: 3.2rem;
+  }
+}
+
+.active {
+  color: var(--clr-logo-1);
+}
+
+.material-icons {
+  font-size: 200px;
+  color: var(--clr-heading);
+  display: block;
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .material-icons {
+    font-size: 60px;
+  }
+}
+
+.sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.363);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  p {
+    background: var(--clr-heading);
+    width: 325px;
+    padding: 1.6rem;
+    text-align: center;
+    border-radius: .6rem;
+  }
+}
+
+@import "responsive";

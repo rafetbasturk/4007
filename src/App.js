@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Loading from "./components/Loading";
+const SharedLayout = lazy(() => import("./components/SharedLayout"))
+const Home = lazy(() => import("./pages/Home"))
+const Contact = lazy(() => import("./pages/Contact"))
+const Error = lazy(() => import("./pages/Error"))
 
 function App() {
+  const [page, setPage] = useState("Ana Sayfa")
+
+  useEffect(() => {
+    document.title = `TÜBİTAK 4007 - ${page}`
+  }, [page])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<SharedLayout page={page} setPage={setPage} />}>
+            <Route index element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<Error />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
