@@ -29,7 +29,7 @@ const Home = () => {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}&q=Şahinbey+Kongre+ve+Sanat+Merkezi/`}>
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBiat57nJYu_iyHI4AjBjwntPazracE09Q&q=Şahinbey+Kongre+ve+Sanat+Merkezi/`}>
         </iframe>
       </section>
     </main>
